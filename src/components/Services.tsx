@@ -1,128 +1,175 @@
-import { ArrowRight, Users, GraduationCap, Briefcase, DollarSign } from "lucide-react";
+import { ArrowRight, Users, GraduationCap, Briefcase, DollarSign, Zap, Shield, Target, Sparkles } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import staffingIcon from "@/assets/staffing-icon.jpg";
-import skillIcon from "@/assets/skill-development-icon.jpg";
-import contractIcon from "@/assets/contract-labor-icon.jpg";
+import staffingIcon from "@/assets/staffing-professional.jpg";
+import skillIcon from "@/assets/skills-training.jpg";
+import contractIcon from "@/assets/workforce-management.jpg";
 
 const Services = () => {
   const services = [
     {
       icon: Users,
       image: staffingIcon,
-      title: "Staffing Solutions",
-      description: "Comprehensive staffing solutions for all major industries including Automobile, Electrical, Electronics, Pharmaceutical, Food, Plastic, and Educational sectors.",
-      features: ["Industry-specific expertise", "Quality talent sourcing", "Scalable solutions", "Compliance management"],
-      accent: "bg-blue-500"
+      title: "Strategic Staffing Solutions",
+      description: "Enterprise-grade staffing solutions powered by AI-driven talent matching and comprehensive industry expertise across Automotive, Technology, Pharmaceutical, and Manufacturing sectors.",
+      features: ["AI-Powered Talent Matching", "Executive Search", "Volume Recruitment", "Industry Specialists"],
+      accent: "from-accent to-accent-light",
+      highlight: "Most Popular"
     },
     {
       icon: GraduationCap,
       image: skillIcon,
-      title: "WISTA Program",
-      description: "Work Integrated Skill Training & Apprenticeship - A flexible, modular framework enabling youth to obtain industry-relevant qualifications.",
-      features: ["Industry-relevant training", "On-the-job experience", "Skill certification", "Career advancement"],
-      accent: "bg-green-500"
+      title: "WISTA Excellence Program",
+      description: "Revolutionary Work Integrated Skill Training & Apprenticeship platform combining cutting-edge learning methodologies with real-world application for next-generation workforce development.",
+      features: ["Immersive Learning Modules", "Industry Certifications", "Mentorship Programs", "Career Pathway Mapping"],
+      accent: "from-success to-green-400",
+      highlight: "Innovation Award Winner"
     },
     {
       icon: Briefcase,
       image: contractIcon,
-      title: "Contract Labour",
-      description: "Complete workforce solutions from junior to senior level positions with 100% legal compliance and comprehensive management.",
-      features: ["100% legal compliance", "All-level positions", "Comprehensive management", "Risk mitigation"],
-      accent: "bg-purple-500"
+      title: "Premium Contract Workforce",
+      description: "End-to-end workforce management solutions with 100% legal compliance, advanced analytics, and seamless integration for enterprises seeking agility and excellence.",
+      features: ["Legal Compliance Guarantee", "Performance Analytics", "Scalable Workforce", "Risk Management"],
+      accent: "from-purple-500 to-purple-400",
+      highlight: "Enterprise Grade"
     },
     {
       icon: DollarSign,
       image: staffingIcon,
-      title: "Payroll Outsourcing",
-      description: "Fully automated payroll processing with advanced technology solutions ensuring accuracy, compliance, and efficiency.",
-      features: ["Automated processing", "Compliance assurance", "Cost-effective", "Real-time reporting"],
-      accent: "bg-orange-500"
+      title: "Intelligent Payroll Suite",
+      description: "Next-generation payroll automation platform featuring real-time processing, predictive analytics, and seamless integration with HR ecosystems for maximum efficiency.",
+      features: ["Real-time Processing", "Predictive Analytics", "Multi-currency Support", "API Integration"],
+      accent: "from-warning to-yellow-400",
+      highlight: "Technology Leader"
     }
   ];
 
   return (
-    <section id="services" className="py-20 bg-background">
-      <div className="container mx-auto px-4">
-        <div className="max-w-6xl mx-auto">
-          {/* Header */}
-          <div className="text-center mb-16 animate-fade-in">
-            <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-6">
-              Our <span className="gradient-text">Services</span>
+    <section id="services" className="py-32 bg-gradient-subtle relative overflow-hidden">
+      {/* Background Elements */}
+      <div className="absolute inset-0 z-0">
+        <div className="absolute top-20 left-10 w-32 h-32 bg-accent/5 rounded-full blur-3xl animate-float"></div>
+        <div className="absolute bottom-20 right-10 w-40 h-40 bg-primary/5 rounded-full blur-3xl animate-float" style={{ animationDelay: '2s' }}></div>
+      </div>
+      
+      <div className="container mx-auto px-4 relative z-10">
+        <div className="max-w-7xl mx-auto">
+          {/* Premium Header */}
+          <div className="text-center mb-20 reveal">
+            <div className="inline-flex items-center gap-2 px-4 py-2 bg-accent-subtle rounded-full text-accent font-medium text-sm mb-6">
+              <Zap className="w-4 h-4" />
+              Premium Service Portfolio
+            </div>
+            <h2 className="text-5xl md:text-7xl font-bold text-foreground mb-8 leading-tight">
+              Transformative <span className="gradient-text">Solutions</span>
             </h2>
-            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-              Comprehensive solutions tailored to meet your business needs with expertise and excellence
+            <p className="text-2xl text-muted-foreground max-w-4xl mx-auto leading-relaxed">
+              Comprehensive enterprise solutions designed to revolutionize your workforce management and drive unprecedented business growth
             </p>
           </div>
 
-          {/* Services Grid */}
-          <div className="grid lg:grid-cols-2 gap-8">
+          {/* Premium Services Grid */}
+          <div className="grid lg:grid-cols-2 gap-10">
             {services.map((service, index) => (
               <div 
                 key={index}
-                className="group bg-card rounded-2xl p-8 shadow-card hover-lift hover-glow transition-all duration-500 animate-scale-in"
+                className="group relative bg-card rounded-3xl p-10 shadow-premium hover-lift border border-card-border transition-all duration-700 reveal overflow-hidden"
                 style={{ animationDelay: `${index * 0.2}s` }}
               >
-                {/* Service Image */}
-                <div className="relative mb-6 overflow-hidden rounded-xl">
+                {/* Highlight Badge */}
+                {service.highlight && (
+                  <div className="absolute top-6 right-6 z-10">
+                    <div className="px-3 py-1 bg-gradient-accent text-white text-xs font-medium rounded-full">
+                      {service.highlight}
+                    </div>
+                  </div>
+                )}
+
+                {/* Service Image with Premium Overlay */}
+                <div className="relative mb-8 overflow-hidden rounded-2xl">
                   <img 
                     src={service.image} 
                     alt={service.title}
-                    className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-500"
+                    className="w-full h-56 object-cover group-hover:scale-110 transition-transform duration-700"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
-                  <div className="absolute top-4 left-4">
-                    <div className="inline-flex items-center justify-center w-12 h-12 bg-white/90 rounded-full">
-                      <service.icon className="w-6 h-6 text-primary" />
+                  <div className={`absolute inset-0 bg-gradient-to-br ${service.accent} opacity-20 group-hover:opacity-30 transition-opacity duration-500`}></div>
+                  <div className="absolute top-6 left-6">
+                    <div className="inline-flex items-center justify-center w-14 h-14 glass border border-white/30 rounded-2xl backdrop-blur-sm">
+                      <service.icon className="w-8 h-8 text-white" />
                     </div>
                   </div>
                 </div>
 
                 {/* Content */}
-                <h3 className="text-2xl font-bold text-foreground mb-4 group-hover:text-accent transition-colors">
+                <h3 className="text-3xl font-bold text-foreground mb-6 group-hover:text-accent transition-colors duration-300">
                   {service.title}
                 </h3>
-                <p className="text-muted-foreground mb-6 leading-relaxed">
+                <p className="text-lg text-muted-foreground mb-8 leading-relaxed">
                   {service.description}
                 </p>
 
-                {/* Features */}
-                <div className="grid grid-cols-2 gap-2 mb-6">
+                {/* Premium Features */}
+                <div className="grid grid-cols-1 gap-4 mb-8">
                   {service.features.map((feature, featureIndex) => (
-                    <div key={featureIndex} className="flex items-center gap-2 text-sm text-muted-foreground">
-                      <div className="w-1.5 h-1.5 bg-accent rounded-full"></div>
-                      {feature}
+                    <div key={featureIndex} className="flex items-center gap-3 group/feature">
+                      <div className="flex items-center justify-center w-6 h-6 bg-accent/10 rounded-lg group-hover/feature:bg-accent/20 transition-colors duration-300">
+                        <Shield className="w-3 h-3 text-accent" />
+                      </div>
+                      <span className="text-foreground font-medium">{feature}</span>
                     </div>
                   ))}
                 </div>
 
-                {/* CTA Button */}
+                {/* Premium CTA Button */}
                 <Button 
-                  variant="outline" 
-                  className="w-full group-hover:border-accent group-hover:text-accent transition-all duration-300"
+                  className="w-full btn-premium bg-gradient-accent text-white shadow-accent font-semibold text-lg py-6 group-hover:scale-105 transition-all duration-300"
                 >
-                  Learn More
-                  <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                  <Target className="mr-3 w-5 h-5" />
+                  Explore Solution
+                  <ArrowRight className="ml-3 w-5 h-5 group-hover:translate-x-2 transition-transform duration-300" />
                 </Button>
               </div>
             ))}
           </div>
 
-          {/* CTA Section */}
-          <div className="text-center mt-16 animate-fade-in">
-            <div className="bg-gradient-primary rounded-2xl p-8 md:p-12 text-white">
-              <h3 className="text-2xl md:text-3xl font-bold mb-4">
-                Ready to Transform Your Business?
-              </h3>
-              <p className="text-xl text-white/90 mb-8 max-w-2xl mx-auto">
-                Let's discuss how our integrated solutions can help your organization achieve its goals.
-              </p>
-              <Button 
-                size="lg" 
-                className="bg-accent text-white hover:bg-accent-light hover:scale-105 transition-all duration-300 shadow-accent"
-              >
-                Get Free Consultation
-                <ArrowRight className="ml-2 w-5 h-5" />
-              </Button>
+          {/* Premium CTA Section */}
+          <div className="text-center mt-24 reveal">
+            <div className="relative bg-gradient-primary rounded-3xl p-12 md:p-16 text-white overflow-hidden">
+              {/* Background Pattern */}
+              <div className="absolute inset-0 opacity-10">
+                <div className="absolute top-10 left-10 w-20 h-20 border border-white/20 rounded-full"></div>
+                <div className="absolute bottom-10 right-10 w-16 h-16 border border-white/20 rounded-full"></div>
+                <div className="absolute top-1/2 left-1/3 w-2 h-2 bg-white/30 rounded-full animate-pulse"></div>
+              </div>
+              
+              <div className="relative z-10">
+                <div className="inline-flex items-center gap-2 px-4 py-2 bg-white/20 rounded-full text-white/90 text-sm font-medium mb-6">
+                  <Sparkles className="w-4 h-4" />
+                  Premium Consultation Available
+                </div>
+                <h3 className="text-4xl md:text-5xl font-bold mb-6 leading-tight">
+                  Ready to Lead the Future?
+                </h3>
+                <p className="text-2xl text-white/95 mb-10 max-w-3xl mx-auto leading-relaxed">
+                  Partner with us to unlock unprecedented growth, innovation, and workforce excellence that sets you apart in today's competitive landscape.
+                </p>
+                <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                  <Button 
+                    size="lg" 
+                    className="btn-premium bg-accent text-white shadow-accent font-semibold px-8 py-4 text-lg"
+                  >
+                    Schedule Premium Consultation
+                    <ArrowRight className="ml-3 w-6 h-6" />
+                  </Button>
+                  <Button 
+                    size="lg" 
+                    variant="outline"
+                    className="border-white/30 text-white hover:bg-white/10 font-semibold px-8 py-4 text-lg backdrop-blur-sm"
+                  >
+                    Download Case Studies
+                  </Button>
+                </div>
+              </div>
             </div>
           </div>
         </div>
