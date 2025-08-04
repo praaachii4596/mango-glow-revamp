@@ -1,10 +1,13 @@
 import { ArrowRight, Users, GraduationCap, Briefcase, DollarSign, Zap, Shield, Target, Sparkles } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { useScrollReveal } from "@/hooks/useScrollReveal";
 import staffingIcon from "@/assets/staffing-professional.jpg";
 import skillIcon from "@/assets/skills-training.jpg";
 import contractIcon from "@/assets/workforce-management.jpg";
 
 const Services = () => {
+  useScrollReveal();
+  
   const services = [
     {
       icon: Users,
@@ -45,7 +48,7 @@ const Services = () => {
   ];
 
   return (
-    <section id="services" className="py-32 bg-gradient-subtle relative overflow-hidden">
+    <section className="py-32 bg-gradient-subtle relative overflow-hidden min-h-screen">
       {/* Background Elements */}
       <div className="absolute inset-0 z-0">
         <div className="absolute top-20 left-10 w-32 h-32 bg-accent/5 rounded-full blur-3xl animate-float"></div>
@@ -69,11 +72,11 @@ const Services = () => {
           </div>
 
           {/* Premium Services Grid */}
-          <div className="grid lg:grid-cols-2 gap-10">
+          <div className="services-grid">
             {services.map((service, index) => (
               <div 
                 key={index}
-                className="group relative bg-card rounded-3xl p-10 shadow-premium hover-lift border border-card-border transition-all duration-700 reveal overflow-hidden"
+                className="service-card group relative bg-card rounded-3xl p-10 shadow-card hover:shadow-premium border border-card-border transition-all duration-700 hover-lift overflow-hidden"
                 style={{ animationDelay: `${index * 0.2}s` }}
               >
                 {/* Highlight Badge */}

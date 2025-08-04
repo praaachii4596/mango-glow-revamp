@@ -310,16 +310,38 @@ Sophisticated color palette with premium feel. All colors MUST be HSL.
     height: 300px;
   }
 
-  /* Scroll reveal animations */
+  /* Scroll reveal animations - Enhanced for better visibility */
   .reveal {
     opacity: 0;
     transform: translateY(40px);
     transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+    will-change: opacity, transform;
   }
 
   .reveal.revealed {
     opacity: 1;
     transform: translateY(0);
+  }
+
+  /* Ensure service cards are always visible by default */
+  .service-card {
+    opacity: 1 !important;
+    transform: translateY(0) !important;
+    display: block !important;
+    visibility: visible !important;
+  }
+
+  /* Enhanced grid display */
+  .services-grid {
+    display: grid !important;
+    grid-template-columns: repeat(auto-fit, minmax(500px, 1fr)) !important;
+    gap: 2.5rem !important;
+  }
+
+  @media (max-width: 768px) {
+    .services-grid {
+      grid-template-columns: 1fr !important;
+    }
   }
 }
 

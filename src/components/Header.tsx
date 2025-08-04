@@ -2,10 +2,12 @@ import { useState, useEffect } from "react";
 import { Menu, X, Phone, Mail, Sparkles } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { ThemeToggle } from "@/components/ThemeToggle";
+import { Link, useLocation } from "react-router-dom";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const location = useLocation();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -16,12 +18,12 @@ const Header = () => {
   }, []);
 
   const navItems = [
-    { name: "Home", href: "#home" },
-    { name: "About", href: "#about" },
-    { name: "Services", href: "#services" },
-    { name: "Why Choose Us", href: "#why-choose-us" },
-    { name: "Clients", href: "#clients" },
-    { name: "Contact", href: "#contact" },
+    { name: "Home", href: "/" },
+    { name: "About", href: "/about" },
+    { name: "Services", href: "/services" },
+    { name: "Why Choose Us", href: "/why-choose-us" },
+    { name: "Clients", href: "/clients" },
+    { name: "Contact", href: "/contact" },
   ];
 
   return (
@@ -51,7 +53,7 @@ const Header = () => {
       {/* Main navigation */}
       <nav className="container mx-auto px-4 py-5">
         <div className="flex items-center justify-between">
-          <div className="flex items-center gap-3">
+          <Link to="/" className="flex items-center gap-3">
             <div className="relative">
               <div className="w-12 h-12 bg-gradient-accent rounded-xl flex items-center justify-center text-white font-bold text-xl shadow-accent hover-glow transition-all duration-300">
                 M
@@ -62,18 +64,22 @@ const Header = () => {
               <span className="text-2xl font-bold gradient-text">MangosOrange</span>
               <span className="text-xs text-muted-foreground font-medium">Excellence in HR Solutions</span>
             </div>
-          </div>
+          </Link>
 
           {/* Desktop Navigation */}
           <div className="hidden lg:flex items-center gap-1">
             {navItems.map((item) => (
-              <a
+              <Link
                 key={item.name}
-                href={item.href}
-                className="nav-link px-4 py-2 text-foreground hover:text-accent font-medium text-sm"
+                to={item.href}
+                className={`nav-link px-4 py-2 font-medium text-sm transition-colors duration-300 ${
+                  location.pathname === item.href
+                    ? "text-accent active"
+                    : "text-foreground hover:text-accent"
+                }`}
               >
                 {item.name}
-              </a>
+              </Link>
             ))}
             <div className="flex items-center gap-3 ml-4">
               <ThemeToggle />
@@ -104,15 +110,19 @@ const Header = () => {
         {isMenuOpen && (
           <div className="lg:hidden mt-6 py-6 glass-strong rounded-2xl animate-scale-in">
             {navItems.map((item, index) => (
-              <a
+              <Link
                 key={item.name}
-                href={item.href}
-                className="block px-6 py-4 text-foreground hover:text-accent hover:bg-card-hover transition-all duration-300 nav-link"
+                to={item.href}
+                className={`block px-6 py-4 hover:bg-card-hover transition-all duration-300 nav-link ${
+                  location.pathname === item.href
+                    ? "text-accent"
+                    : "text-foreground hover:text-accent"
+                }`}
                 onClick={() => setIsMenuOpen(false)}
                 style={{ animationDelay: `${index * 0.1}s` }}
               >
                 {item.name}
-              </a>
+              </Link>
             ))}
             <div className="px-6 pt-4">
               <Button className="w-full btn-premium bg-gradient-accent shadow-accent text-white font-medium">
