@@ -4,7 +4,7 @@ import heroImage from "@/assets/hero-business.jpg";
 
 const Hero = () => {
   return (
-    <section id="home" className="relative min-h-screen flex items-center overflow-hidden bg-gradient-subtle">
+    <section id="home" className="relative min-h-screen flex items-center overflow-hidden bg-gradient-subtle pt-24">
       {/* Background Image with Premium Overlay */}
       <div className="absolute inset-0 z-0">
         <img
