@@ -4,7 +4,7 @@ import heroImage from "@/assets/hero-business.jpg";
 
 const Hero = () => {
   return (
-    <section id="home" className="relative min-h-screen flex items-center overflow-hidden bg-gradient-subtle">
+    <section id="home" className="relative min-h-screen flex items-center overflow-hidden bg-gradient-subtle pt-24">
       {/* Background Image with Premium Overlay */}
       <div className="absolute inset-0 z-0">
         <img
@@ -36,31 +36,31 @@ const Hero = () => {
           </div>
 
           <div className="animate-slide-up">
-            <h1 className="text-6xl md:text-8xl font-bold text-white mb-8 leading-[0.9] tracking-tight">
+            <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-6 md:mb-8 leading-[0.9] tracking-tight">
               Future-Forward
               <span className="block gradient-text bg-gradient-to-r from-accent via-accent-light to-accent bg-clip-text text-transparent"> 
                 Workforce Solutions
               </span>
             </h1>
-            <p className="text-2xl md:text-3xl text-white/95 mb-12 max-w-3xl leading-relaxed font-light">
+            <p className="text-lg md:text-xl lg:text-2xl text-white/95 mb-8 md:mb-12 max-w-2xl lg:max-w-3xl leading-relaxed font-light">
               Transforming businesses through innovative HR solutions, strategic workforce management, and premium talent acquisition for the modern enterprise.
             </p>
           </div>
 
-          <div className="flex flex-col sm:flex-row gap-6 mb-16 animate-scale-in">
+          <div className="flex flex-col sm:flex-row gap-4 md:gap-6 mb-12 md:mb-16 animate-scale-in">
             <Button 
               size="lg" 
-              className="btn-premium bg-gradient-accent text-white shadow-accent font-semibold px-8 py-4 text-lg group relative overflow-hidden"
+              className="btn-premium bg-gradient-accent text-white shadow-accent font-semibold px-6 md:px-8 py-3 md:py-4 text-base md:text-lg group relative overflow-hidden"
             >
               <span className="relative z-10">Start Your Transformation</span>
-              <ArrowRight className="ml-3 w-6 h-6 group-hover:translate-x-2 transition-transform duration-300 relative z-10" />
+              <ArrowRight className="ml-2 md:ml-3 w-5 h-5 md:w-6 md:h-6 group-hover:translate-x-2 transition-transform duration-300 relative z-10" />
             </Button>
             <Button 
               size="lg" 
               variant="outline" 
-              className="glass border-white/30 text-white hover:bg-white/10 hover:scale-105 transition-all duration-500 font-semibold px-8 py-4 text-lg group backdrop-blur-sm"
+              className="glass border-white/30 text-white hover:bg-white/10 hover:scale-105 transition-all duration-500 font-semibold px-6 md:px-8 py-3 md:py-4 text-base md:text-lg group backdrop-blur-sm"
             >
-              <Play className="mr-3 w-6 h-6 group-hover:scale-110 transition-transform duration-300" />
+              <Play className="mr-2 md:mr-3 w-5 h-5 md:w-6 md:h-6 group-hover:scale-110 transition-transform duration-300" />
               Watch Our Story
             </Button>
           </div>

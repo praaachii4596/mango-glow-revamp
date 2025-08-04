@@ -45,7 +45,7 @@ const Services = () => {
   ];
 
   return (
-    <section id="services" className="py-32 bg-gradient-subtle relative overflow-hidden">
+    <section id="services" className="py-16 md:py-24 bg-gradient-subtle relative overflow-hidden">
       {/* Background Elements */}
       <div className="absolute inset-0 z-0">
         <div className="absolute top-20 left-10 w-32 h-32 bg-accent/5 rounded-full blur-3xl animate-float"></div>
@@ -55,26 +55,25 @@ const Services = () => {
       <div className="container mx-auto px-4 relative z-10">
         <div className="max-w-7xl mx-auto">
           {/* Premium Header */}
-          <div className="text-center mb-20 reveal">
+          <div className="text-center mb-12 md:mb-16">
             <div className="inline-flex items-center gap-2 px-4 py-2 bg-accent-subtle rounded-full text-accent font-medium text-sm mb-6">
               <Zap className="w-4 h-4" />
               Premium Service Portfolio
             </div>
-            <h2 className="text-5xl md:text-7xl font-bold text-foreground mb-8 leading-tight">
+            <h2 className="text-3xl md:text-5xl lg:text-6xl font-bold text-foreground mb-6 leading-tight">
               Transformative <span className="gradient-text">Solutions</span>
             </h2>
-            <p className="text-2xl text-muted-foreground max-w-4xl mx-auto leading-relaxed">
+            <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
               Comprehensive enterprise solutions designed to revolutionize your workforce management and drive unprecedented business growth
             </p>
           </div>
 
           {/* Premium Services Grid */}
-          <div className="grid lg:grid-cols-2 gap-10">
+          <div className="grid lg:grid-cols-2 gap-6 md:gap-8">
             {services.map((service, index) => (
               <div 
                 key={index}
-                className="group relative bg-card rounded-3xl p-10 shadow-premium hover-lift border border-card-border transition-all duration-700 reveal overflow-hidden"
-                style={{ animationDelay: `${index * 0.2}s` }}
+                className="group relative bg-card rounded-2xl md:rounded-3xl p-6 md:p-8 shadow-card hover-lift border border-card-border transition-all duration-700 overflow-hidden"
               >
                 {/* Highlight Badge */}
                 {service.highlight && (
@@ -86,55 +85,55 @@ const Services = () => {
                 )}
 
                 {/* Service Image with Premium Overlay */}
-                <div className="relative mb-8 overflow-hidden rounded-2xl">
+                <div className="relative mb-6 overflow-hidden rounded-xl">
                   <img 
                     src={service.image} 
                     alt={service.title}
-                    className="w-full h-56 object-cover group-hover:scale-110 transition-transform duration-700"
+                    className="w-full h-40 md:h-48 object-cover group-hover:scale-110 transition-transform duration-700"
                   />
                   <div className={`absolute inset-0 bg-gradient-to-br ${service.accent} opacity-20 group-hover:opacity-30 transition-opacity duration-500`}></div>
-                  <div className="absolute top-6 left-6">
-                    <div className="inline-flex items-center justify-center w-14 h-14 glass border border-white/30 rounded-2xl backdrop-blur-sm">
-                      <service.icon className="w-8 h-8 text-white" />
+                  <div className="absolute top-4 left-4">
+                    <div className="inline-flex items-center justify-center w-10 h-10 md:w-12 md:h-12 glass border border-white/30 rounded-xl backdrop-blur-sm">
+                      <service.icon className="w-5 h-5 md:w-6 md:h-6 text-white" />
                     </div>
                   </div>
                 </div>
 
                 {/* Content */}
-                <h3 className="text-3xl font-bold text-foreground mb-6 group-hover:text-accent transition-colors duration-300">
+                <h3 className="text-xl md:text-2xl font-bold text-foreground mb-4 group-hover:text-accent transition-colors duration-300">
                   {service.title}
                 </h3>
-                <p className="text-lg text-muted-foreground mb-8 leading-relaxed">
+                <p className="text-sm md:text-base text-muted-foreground mb-6 leading-relaxed">
                   {service.description}
                 </p>
 
                 {/* Premium Features */}
-                <div className="grid grid-cols-1 gap-4 mb-8">
+                <div className="grid grid-cols-1 gap-3 mb-6">
                   {service.features.map((feature, featureIndex) => (
                     <div key={featureIndex} className="flex items-center gap-3 group/feature">
-                      <div className="flex items-center justify-center w-6 h-6 bg-accent/10 rounded-lg group-hover/feature:bg-accent/20 transition-colors duration-300">
+                      <div className="flex items-center justify-center w-5 h-5 bg-accent/10 rounded-lg group-hover/feature:bg-accent/20 transition-colors duration-300">
                         <Shield className="w-3 h-3 text-accent" />
                       </div>
-                      <span className="text-foreground font-medium">{feature}</span>
+                      <span className="text-sm md:text-base text-foreground font-medium">{feature}</span>
                     </div>
                   ))}
                 </div>
 
                 {/* Premium CTA Button */}
                 <Button 
-                  className="w-full btn-premium bg-gradient-accent text-white shadow-accent font-semibold text-lg py-6 group-hover:scale-105 transition-all duration-300"
+                  className="w-full btn-premium bg-gradient-accent text-white shadow-accent font-semibold text-sm md:text-base py-3 md:py-4 group-hover:scale-105 transition-all duration-300"
                 >
-                  <Target className="mr-3 w-5 h-5" />
+                  <Target className="mr-2 w-4 h-4" />
                   Explore Solution
-                  <ArrowRight className="ml-3 w-5 h-5 group-hover:translate-x-2 transition-transform duration-300" />
+                  <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-2 transition-transform duration-300" />
                 </Button>
               </div>
             ))}
           </div>
 
           {/* Premium CTA Section */}
-          <div className="text-center mt-24 reveal">
-            <div className="relative bg-gradient-primary rounded-3xl p-12 md:p-16 text-white overflow-hidden">
+          <div className="text-center mt-16 md:mt-20">
+            <div className="relative bg-gradient-primary rounded-2xl md:rounded-3xl p-8 md:p-12 text-white overflow-hidden">
               {/* Background Pattern */}
               <div className="absolute inset-0 opacity-10">
                 <div className="absolute top-10 left-10 w-20 h-20 border border-white/20 rounded-full"></div>
@@ -147,24 +146,24 @@ const Services = () => {
                   <Sparkles className="w-4 h-4" />
                   Premium Consultation Available
                 </div>
-                <h3 className="text-4xl md:text-5xl font-bold mb-6 leading-tight">
+                <h3 className="text-2xl md:text-4xl font-bold mb-4 md:mb-6 leading-tight">
                   Ready to Lead the Future?
                 </h3>
-                <p className="text-2xl text-white/95 mb-10 max-w-3xl mx-auto leading-relaxed">
+                <p className="text-base md:text-xl text-white/95 mb-8 md:mb-10 max-w-2xl mx-auto leading-relaxed">
                   Partner with us to unlock unprecedented growth, innovation, and workforce excellence that sets you apart in today's competitive landscape.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4 justify-center">
                   <Button 
                     size="lg" 
-                    className="btn-premium bg-accent text-white shadow-accent font-semibold px-8 py-4 text-lg"
+                    className="btn-premium bg-accent text-white shadow-accent font-semibold px-6 py-3 text-sm md:text-base"
                   >
                     Schedule Premium Consultation
-                    <ArrowRight className="ml-3 w-6 h-6" />
+                    <ArrowRight className="ml-2 w-4 h-4 md:w-5 md:h-5" />
                   </Button>
                   <Button 
                     size="lg" 
                     variant="outline"
-                    className="border-white/30 text-white hover:bg-white/10 font-semibold px-8 py-4 text-lg backdrop-blur-sm"
+                    className="border-white/30 text-white hover:bg-white/10 font-semibold px-6 py-3 text-sm md:text-base backdrop-blur-sm"
                   >
                     Download Case Studies
                   </Button>
