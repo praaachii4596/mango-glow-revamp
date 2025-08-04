@@ -1,10 +1,8 @@
 import { ArrowRight, Play, Users, Building, Award, Sparkles, TrendingUp } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { useScrollReveal } from "@/hooks/useScrollReveal";
 import heroImage from "@/assets/hero-business.jpg";
 
 const Hero = () => {
-  useScrollReveal();
   return (
     <section id="home" className="relative min-h-screen flex items-center overflow-hidden bg-gradient-subtle">
       {/* Background Image with Premium Overlay */}
