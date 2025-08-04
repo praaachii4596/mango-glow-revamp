@@ -55,7 +55,7 @@ const Services = () => {
       <div className="container mx-auto px-4 relative z-10">
         <div className="max-w-7xl mx-auto">
           {/* Premium Header */}
-          <div className="text-center mb-20">
+          <div className="text-center mb-20 reveal">
             <div className="inline-flex items-center gap-2 px-4 py-2 bg-accent-subtle rounded-full text-accent font-medium text-sm mb-6">
               <Zap className="w-4 h-4" />
               Premium Service Portfolio
@@ -73,7 +73,7 @@ const Services = () => {
             {services.map((service, index) => (
               <div 
                 key={index}
-                className="group relative bg-card rounded-3xl p-10 shadow-premium hover-lift border border-card-border transition-all duration-700 overflow-hidden"
+                className="group relative bg-card rounded-3xl p-10 shadow-premium hover-lift border border-card-border transition-all duration-700 reveal overflow-hidden"
                 style={{ animationDelay: `${index * 0.2}s` }}
               >
                 {/* Highlight Badge */}
@@ -133,7 +133,7 @@ const Services = () => {
           </div>
 
           {/* Premium CTA Section */}
-          <div className="text-center mt-24">
+          <div className="text-center mt-24 reveal">
             <div className="relative bg-gradient-primary rounded-3xl p-12 md:p-16 text-white overflow-hidden">
               {/* Background Pattern */}
               <div className="absolute inset-0 opacity-10">
